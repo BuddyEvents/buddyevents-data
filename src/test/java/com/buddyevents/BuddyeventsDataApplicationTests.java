@@ -10,7 +10,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
-import org.springframework.boot.test.json.JacksonTester;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -28,7 +27,7 @@ public class BuddyeventsDataApplicationTests {
 	TestRestTemplate testRestTemplate;
 	@Autowired
 	PersonRepository personRepository;
-    private JacksonTester<Person> json;
+    
 
 	@Before
 	public void setup(){
@@ -45,7 +44,7 @@ public class BuddyeventsDataApplicationTests {
      ResponseEntity<Person>  per=  this.testRestTemplate.getForEntity(
             "/people/search/findByName", Person.class,urlVariables);
      Assert.assertEquals("not expected",200, per.getStatusCodeValue());
-    // Assert.assertEquals("expected not equals", per.getBody().getName(),"SG");
+   // Assert.assertEquals("expected not equals", per.getBody().getName(),"SG");
     }
 
     @After

@@ -40,6 +40,13 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+    <groupId>org.neo4j</groupId>
+    <artifactId>neo4j-ogm-embedded-driver</artifactId>
+    <version>2.1.0-RC1</version>
+            <scope>test</scope>
+</dependency>
+        
     </dependencies>
 
     <build>
@@ -60,6 +67,14 @@
             <id>spring-milestones</id>
             <url>http://repo.spring.io/milestone</url>
         </repository>
+         <repository>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>central</id>
+      <name>Maven Repository Switchboard</name>
+      <url>http://repo.maven.apache.org/maven2/</url>
+    </repository>
     </repositories>
     <pluginRepositories>
         <pluginRepository>
